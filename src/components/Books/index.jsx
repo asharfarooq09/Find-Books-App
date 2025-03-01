@@ -43,8 +43,7 @@ const Books = () => {
       }, 500);
 
       return () => clearTimeout(timer);
-    }
-    else{
+    } else {
       setSearching(false);
     }
   }, [query]);
@@ -56,19 +55,24 @@ const Books = () => {
   return (
     <div className="container">
       <Search query={query} setQuery={setQuery} />
-
       <div className="book-container">
-        {(loading || searching) ? (
-          Array.from({ length: 6 }).map((_, index) => <SkeletonCard key={index} />)
+        {loading || searching ? (
+          Array.from({ length: 8 }).map((_, index) => (
+            <SkeletonCard key={index} />
+          ))
         ) : filteredBooks.length > 0 ? (
           filteredBooks.map((book, index) => (
             <div key={index} className="book-card">
-              <img className="img" src={book.image || "/default-image.png"} alt={book.name} />
+              <img className="img" src={book.image || "/default-image.png"} />
               <h2>{book.name || "No Title Available"}</h2>
-              <p className="price">{book.price ? `Price: ${book.price}` : "Price not available"}</p>
+              <p className="price">
+                {book.price ? `Price: ${book.price}` : "Price not available"}
+              </p>
               <div className="ratings">
                 <p className="average">⭐ {book.rating?.average || "N/A"}</p>
-                <p className="reviews">📖 {book.rating?.reviews || "0"} Reviews</p>
+                <p className="reviews">
+                  📖 {book.rating?.reviews || "0"} Reviews
+                </p>
               </div>
             </div>
           ))
