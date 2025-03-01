@@ -1,0 +1,159 @@
+.container {
+  text-align: center;
+  padding: 20px;
+  background-color: #f8f9fa;
+  min-height: 100vh;
+}
+
+
+
+.book-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.book-card {
+  width: 270px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  text-align: center;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  border: 2px solid transparent;
+}
+
+.book-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  border-color: #007bff;
+}
+
+.book-card .img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.book-card h2 {
+  font-size: 20px;
+  color: #333;
+  font-weight: bold;
+  padding: 8px 0;
+}
+
+.book-card .price {
+  text-align: start;
+  font-size: 16px;
+  font-weight: bold;
+  color: #007bff;
+  background: #eaf4ff;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.ratings {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  color: #555;
+}
+
+.ratings .average {
+  font-weight: bold;
+  color: #ff9800;
+  background: #fff3cd;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.ratings .reviews {
+  font-weight: bold;
+  color: #28a745;
+  background: #d4edda;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+/* Skeleton Loader Styles */
+.skeleton-card {
+  width: 270px; /* Same as .book-card */
+  height: 350px; /* Approximate height */
+  background: white;
+  border-radius: 10px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.skeleton {
+  background: linear-gradient(90deg, #e0e0e0 25%, #f0f0f0 50%, #e0e0e0 75%);
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.5s infinite ease-in-out;
+  border-radius: 8px;
+}
+
+.skeleton-img {
+  width: 100%;
+  height: 200px; /* Same as .book-card img */
+  border-radius: 8px;
+}
+
+.skeleton-text {
+  width: 80%;
+  height: 20px;
+  margin: 5px auto;
+}
+
+.skeleton-text.small {
+  width: 50%;
+  height: 15px;
+}
+
+.skeleton-rating {
+  width: 90%;
+  height: 10px;
+  margin: 5px auto;
+}
+
+/* Animation */
+@keyframes skeleton-loading {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  input {
+    width: 80%;
+  }
+
+  .book-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .book-card {
+    width: 80%;
+  }
+}
