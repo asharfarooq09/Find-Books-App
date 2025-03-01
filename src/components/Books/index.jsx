@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./books.css";
+import "./Books.css";
 import Search from "../Search/Search";
 
 const SkeletonCard = () => {
@@ -35,13 +35,12 @@ const Books = () => {
     fetchBooks();
   }, []);
 
-  // Handle search with a delay
   useEffect(() => {
     if (query) {
       setSearching(true);
       const timer = setTimeout(() => {
         setSearching(false);
-      }, 500); // Delay for 500ms
+      }, 500);
 
       return () => clearTimeout(timer);
     }
